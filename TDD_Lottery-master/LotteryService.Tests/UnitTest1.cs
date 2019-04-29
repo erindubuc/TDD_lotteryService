@@ -30,6 +30,31 @@ namespace Tests
         [Test]
         public void Return_TwoNumsSorted()
         {
+            int[] lotteryNums2 = new int[2] { 5, 1 };
+            int[] actual = _testService.SortNumbers(lotteryNums2);
+            Assert.AreEqual(new int[2] { 1, 5 }, actual);
+        }
+
+        [Test]
+        public void Return_ThreeNumsSorted()
+        {
+            int[] lotteryNumbers3 = new int[3] { 10, 5, 1 };
+            int[] actual = _testService.SortNumbers(lotteryNumbers3);
+            Assert.AreEqual(new int[3] { 1, 5, 10 }, actual);
+        }
+
+        [Test]
+        public void Return_TenNumsSorted()
+        {
+            int[] lotteryNums4 = new int[10] { 37, 10, 4, 7, 81, 8, 12, 14, 18, 23 };
+            int[] actual = _testService.SortNumbers(lotteryNums4);
+            Assert.AreEqual(new int[10] { 4, 7, 8, 10, 12, 14, 18, 23, 37, 81 }, actual);
+        }
+
+        /*
+        [Test]
+        public void Return_TwoNumsSorted()
+        {
             int[] lotteryNumbers2 = new int[2] { 5, 1 };
             int[] actual = _testService.SortNumbers(lotteryNumbers2);
             Assert.AreEqual(new int[2] { 1, 5 }, actual);
@@ -52,6 +77,6 @@ namespace Tests
             int[] actual = _testService.SortNumbers(lotteryNums4);
             Assert.AreEqual(new int[10] { 4, 7, 8, 10, 12, 14, 18, 23, 37, 81 }, actual);
         }
-
+        */
     }
 }
